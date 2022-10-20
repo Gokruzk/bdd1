@@ -8,8 +8,11 @@ create table ordenes(
 );*/
 
 create table orden_item(
-	num_orden int not null,
+	num_orden int not null check(num_orden > 0),
 	item_num datetime,
 	PRIMARY KEY (num_orden, item_num),
-	foreign key (num_orden) references ordenes(num_orden) on delete cascade
+	foreign key (num_orden) references ordenes(num_orden) on delete cascade,
 );
+
+--drop table orden_item
+alter table orden_item add check(item_num<=getDate())
