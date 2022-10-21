@@ -36,7 +36,7 @@ create table producto(
 	primary key(cod_producto) 
 );
 create table compra_producto(
-	num_orden int identity(1,1),
+	num_orden int,
 	cod_producto int not null,
 	cantidad int not null,
 	primary key(num_orden, cod_producto),
@@ -46,14 +46,14 @@ create table compra_producto(
 --Modificar la estructura de una de las tablas de la base de datos (ALTER) 
 --Agrega dos columnas (considerar check de validación) a la tabla cliente: genero y fecha_nacimiento. 
 alter table cliente add genero char(1), fecha_nacimiento date;
-alter table cliente add check(genero = 'M' or genero = 'F');
-alter table cliente add check(fecha_nacimiento < getDate());
+alter table cliente add constraint CK_genero check(genero = 'M' or genero = 'F');
+alter table cliente add constraint CK_fechaNac check(fecha_nacimiento < getDate());
 --Agregar la columna precio_unitario en la tabla producto.
 alter table producto add precio_unitario money;
 
 --Eliminar la columna fecha_nacimiento de la tabla cliente
-ALTER TABLE cliente drop constraint genero;
-ALTER TABLE cliente drop constraint fecha_nacimiento;
+ALTER TABLE cliente drop constraint CK_genero;
+ALTER TABLE cliente drop constraint CK_fechaNac;
 alter table cliente drop column fecha_nacimiento;
---Eliminar una delas tablas (DROP) creadas
+--Eliminar una de las tablas (DROP) creadas
 drop table cliente;
