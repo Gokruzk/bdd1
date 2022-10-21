@@ -1,3 +1,4 @@
+--NIGELL MARCEL JAMA OYARVIDE - 7046
 --Crear base de datos
 create database BD5
 --Usar base de datos
@@ -52,7 +53,6 @@ alter table cliente add constraint CK_fechaNac check(fecha_nacimiento < getDate(
 alter table producto add precio_unitario money;
 
 --Eliminar la columna fecha_nacimiento de la tabla cliente
-ALTER TABLE cliente drop constraint CK_genero;
 ALTER TABLE cliente drop constraint CK_fechaNac;
 alter table cliente drop column fecha_nacimiento;
 --Eliminar una de las tablas (DROP) creadas
