@@ -18,8 +18,8 @@ insert into area(cod_area, nombre) values
 
 --Tabla estado_mat
 insert into estado_mat(cod_estado_mat,nombre) values
-	('001','Pendiente'),
-	('002','Definitiva');
+	('001','PEN'),
+	('002','DEN');
 
 --Tabla estado_eva
 insert into estado_eva(cod_estado_eva,nombre) values
@@ -50,65 +50,63 @@ insert into carrera(cod_carrera,nombre,cod_facultad) values
 	('0007','Agraria','003FCP'),
 	('0008','Finanzas','002FADE'),
 	('0009','Economia','002FADE'),
-	('0010','Mecanica','004FMI'),
-	('0011','Industrial','004FMI'),
-	('0012','Industrial','004FMI'),
-	('0013','Mantenimiento','004FMI'),
-	('0013','Mantenimiento','004FMI'),
-	('0014','Tecnologias de la informacion','001FIE'),
-	('0015','Administracion de empresas','002FADE'),
-	('0016','Mercadotecnia','002FADE'),
-	('0017','Contabilidad y auditoria','002FADE'),
-	('0018','Gestion de transporte','002FADE'),
-	('0019','Mercadotecnia','002FADE'),
-	('0020','Mantenimiento industrial','004FMI');
+	('0010','Mecanica','004FIME'),
+	('0011','Industrial','004FIME'),
+	('0012','Industrial','004FIME'),
+	('0013','Mantenimiento','004FIME'),
+	('0014','Mantenimiento','004FIME'),
+	('0015','Tecnologias de la informacion','001FIE'),
+	('0016','Administracion de empresas','002FADE'),
+	('0017','Mercadotecnia','002FADE'),
+	('0018','Contabilidad y auditoria','002FADE'),
+	('0019','Gestion de transporte','002FADE'),
+	('0020','Mantenimiento industrial','004FIME');
 
 --Tabla materia
 insert into materia(cod_materia,nombre,semestre,cod_area,cod_carrera) values
-	('0001','base de datos 1','cuarto','001','001'),
-	('0002','estructura de datos','cuarto','001','001'),
-	('0003','gestion administrativa','cuarto','001','001'),
-	('0004','sostenibilidad ambiental','cuarto','001','001'),
-	('0005','calculo 1','cuarto','001','001'),
-	('0006','calculo 2','cuarto','001','001'),
-	('0007','fisica 1','cuarto','001','001'),
-	('0008','fisica 2','cuarto','001','001'),
-	('0009','mate discreta 1','cuarto','001','001'),
-	('0010','mate discreta 2','cuarto','001','001'),
-	('0011','ingles 1','cuarto','001','001'),
-	('0012','ingles 2','cuarto','001','001'),
-	('0013','ingles 3','cuarto','001','001'),
-	('0014','ingles 4','cuarto','001','001'),
-	('0015','ecuaciones diferenciales','cuarto','001','001'),
+	('0001','base de datos 1','cuarto','0001','0001'),
+	('0002','estructura de datos','cuarto','0001','001'),
+	('0003','gestion administrativa','cuarto','0008','001'),
+	('0004','sostenibilidad ambiental','cuarto','001','0005'),
+	('0005','calculo 1','primero','001','0002'),
+	('0006','calculo 2','segundo','001','0002'),
+	('0007','fisica 1','primero','001','0005'),
+	('0008','fisica 2','segundo','001','0004'),
+	('0009','mate discreta 1','tercero','001','0003'),
+	('0010','mate discreta 2','cuarto','001','0002'),
+	('0011','ingles 1','primero','001','0010'),
+	('0012','ingles 2','segundo','001','0011'),
+	('0013','ingles 3','tercero','001','0014'),
+	('0014','ingles 4','cuarto','001','0009'),
+	('0015','ecuaciones diferenciales','tercero','001','0005'),
 	('0016','emprendimiento','quinto','001','001'),
 	('0017','base de datos 2','quinto','001','001'),
 	('0018','redes 1','sexto','001','001'),
 	('0019','redes 2','septimo','001','001'),
-	('0020','ecuaciones diferenciales','cuarto','001','001');
+	('0020','sistemas operativos','cuarto','001','001');
 
 --Tabla estudiante
 insert into estudiante(cod_estudiante,cedula,nombre,apellido,fecha_nac,direccion,discapacidad,sexo,etnia) values
 	('7046','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7045','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7044','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7043','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7042','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7041','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7040','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7039','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7038','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7037','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7036','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7035','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7034','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7033','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7032','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7031','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7030','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7029','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7028','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002'),
-	('7027','0850106188','NIGELL MARCEL','JAMA OYARVIDE','2002-01-06','esmeraldas','no','M','002');
-
+	('7045','0850106120','OMAR ROGELIO','GREFA ANDI','2004-02-06','guayaquil','no','M','002'),
+	('7044','0850146128','ALEJANDRO SEBASTIAN','SALAZAR MANTILLA','2001-08-06','quito','si','M','002'),
+	('7043','0850106178','ANDREA ALEJANDRA','MORETA SOLIS','2005-07-06','los rios','si','F','002'),
+	('7042','0850106168','DORIS SELENA','VILLALVA BARRAGAN','2006-10-06','riobamba','si','F','002'),
+	('7041','0850106158','NIGELL MARCEL','JAMA OYARVIDE','2007-11-06','esmeraldas','no','M','003'),
+	('7040','0850106148','JOSEPH STEVEN','GONZALEZ ORDONIEZ','2000-10-06','santo domingo','no','M','004'),
+	('7039','0852206138','BBBB BBBB','AAAA AAAAAAAA','2001-11-06','esmeraldas','si','F','001'),
+	('7038','0850106128','CCCCC CCCCC','BBBB BBBBB','2003-12-06','ambato','si','F','002'),
+	('7037','0840106118','DAYANA LISBETH','NARANJO VITERI','2001-07-06','cuenca','no','F','003'),
+	('7036','0870106108','CIELO DE LOS ANGELES','MORILLO OBANDO','2000-09-06','loja','no','F','004'),
+	('7035','0850106588','FIORELLA MARINA','AMAGUAYA SISA','2004-10-06','caniar','no','F','001'),
+	('7034','0850106688','KEYLA GUADALUPE','MUNIOZ CCCC','2005-11-06','banios','si','F','003'),
+	('7033','0850106788','VICTOR HUGO','OCHOA BOLANIOS','2007-12-06','guayaquil','si','M','004'),
+	('7032','0850106888','DIEGO LIZANDRO','CAMPOS GUEVARA','2008-02-06','manabi','no','M','001'),
+	('7031','0850106988','STALIN ANDRES','ALVARADO ALQUINGA','2009-05-06','portoviejo','no','M','002'),
+	('7030','0850106108','GEOVANNY ISMAEL','CARVAJAL VALDIVIESO','2010-06-06','santo domingo','si','M','003'),
+	('7029','0850106118','JHOEL ESTIVEN','CAIZA PPPP','2003-07-06','el oro','no','M','001'),
+	('7028','0850116128','JUAN ALEJANDRO','YAUCEN HHHH','2000-08-06','cuencia','si','M','002'),
+	('7027','0850106138','FRANCIS PATRICIO','SEPULVEDA AAAA','2001-09-06','morona santiago','no','M','004');
 
 --Tabla matricula
 insert into matricula(cod_estudiante,cod_materia,cod_periodo,fecha_matricula,estado) values
