@@ -19,7 +19,7 @@ select cod_estudiante, nombre +' '+ apellido as 'estudiante' , fecha_nac
 from estudiante where apellido like 'J%' 
 --8. Buscar estudiante por apellido con patrones (empiece con G, con 7 sin contar G)
 select cod_estudiante, nombre +' '+ apellido as 'estudiante' , fecha_nac 
-from estudiante where apellido like 'G_______'
+from estudiante where apellido like 'J___%'
 --9 Intervalo de apellidos que empiezan de la A a la G
 select cod_estudiante, nombre +' '+ apellido as 'estudiante' , fecha_nac 
 from estudiante where apellido like '[A - G]%'

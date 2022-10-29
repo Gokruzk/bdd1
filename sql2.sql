@@ -1,8 +1,8 @@
 --NIGELL MARCEL JAMA OYARVIDE - 7046
 --Crear base de datos
-create database BD5
+create database BD4
 --Usar base de datos
-use BD5
+use BD4
 --Crear tablas
 create table tipo_cliente(
 	tipo_cli varchar(10),
