@@ -14,7 +14,7 @@ create table cliente(
 	"nombre cliente" varchar(100) not null,
 	tipo_cli varchar(10) not null,
 	primary key(cod_cli),
-	foreign key(tipo_cli) references tipo_cliente(tipo_cli) on delete cascade
+	foreign key(tipo_cli) references tipo_cliente(tipo_cli)
 );
 create table vendedor(
 	cod_ven varchar(10),
@@ -28,7 +28,7 @@ create table orden_compra(
 	cod_cli varchar(10) not null,
 	vendedor varchar (10) not null,
 	primary key(num_orden),
-	foreign key(vendedor) references vendedor(cod_ven) on delete cascade
+	foreign key(vendedor) references vendedor(cod_ven)
 );
 create table producto(
 	cod_producto int,
@@ -41,11 +41,11 @@ create table compra_producto(
 	cod_producto int not null,
 	cantidad int not null,
 	primary key(num_orden, cod_producto),
-	foreign key(cod_producto) references producto(cod_producto) on delete cascade,
+	foreign key(cod_producto) references producto(cod_producto),
 	foreign key(num_orden) references orden_compra(num_orden)
 );
 --Modificar la estructura de una de las tablas de la base de datos (ALTER) 
---Agrega dos columnas (considerar check de validación) a la tabla cliente: genero y fecha_nacimiento. 
+--Agrega dos columnas (considerar check de validaciï¿½n) a la tabla cliente: genero y fecha_nacimiento. 
 alter table cliente add genero char(1), fecha_nacimiento date;
 alter table cliente add constraint CK_genero check(genero = 'M' or genero = 'F');
 alter table cliente add constraint CK_fechaNac check(fecha_nacimiento < getDate());
