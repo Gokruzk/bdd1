@@ -15,7 +15,7 @@ insert into area(cod_area, nombre) values
 	('001','basica'),
 	('002','profesionalizante'),
 	('003','integracion curricular');
-	
+
 --Tabla estado_mat
 insert into estado_mat(cod_estado_mat,nombre) values
 	('001','PEN'),
@@ -55,30 +55,34 @@ insert into carrera(cod_carrera,nombre,cod_facultad) values
 	('0012','Industrial','004FIME'),
 	('0013','Mantenimiento','004FIME'),
 	('0014','Mantenimiento','004FIME'),
-	('0015','Tecnologias de la informacion','001FIE');
+	('0015','Tecnologias de la informacion','001FIE'),
+	('0016','Administracion de empresas','002FADE'),
+	('0017','Mercadotecnia','002FADE'),
+	('0018','Contabilidad y auditoria','002FADE'),
+	('0019','Gestion de transporte','002FADE'),
+	('0020','Mantenimiento industrial','004FIME');
 
 --Tabla materia
 insert into materia(cod_materia,nombre,semestre,cod_area,cod_carrera) values
-	('0001','base de datos 1','4','002','0001'),
-	('0002','estructura de datos','4','002','0002'),
-	('0003','gestion administrativa','4','001','0003'),
-	('0004','sostenibilidad ambiental','4','001','0004'),
+	('0001','base de datos 1','4','001','0001'),
+	('0002','estructura de datos','4','001','0001'),
+	('0003','gestion administrativa','4','001','0001'),
+	('0004','sostenibilidad ambiental','4','001','0005'),
 	('0005','calculo 1','1','001','0002'),
 	('0006','calculo 2','2','001','0002'),
 	('0007','fisica 1','1','001','0005'),
-	('0008','fisica 2','2','001','0004'),
-	('0009','mate discreta 1','3','002','0003'),
-	('0010','mate discreta 2','4','002','0002'),
+	('0009','mate discreta 1','3','001','0003'),
+	('0010','mate discreta 2','4','001','0002'),
 	('0011','ingles 1','1','001','0010'),
 	('0012','ingles 2','2','001','0011'),
 	('0013','ingles 3','3','001','0014'),
 	('0014','ingles 4','4','001','0009'),
 	('0015','ecuaciones diferenciales','3','001','0005'),
-	('0016','emprendimiento','5','002','0002'),
-	('0017','base de datos 2','5','002','0001'),
-	('0018','redes 1','6','002','0015'),
-	('0019','redes 2','7','002','0015'),
-	('0020','sistemas operativos','4','002','0001');
+	('0016','emprendimiento','5','001','0001'),
+	('0017','base de datos 2','5','001','0001'),
+	('0018','redes 1','6','001','0001'),
+	('0019','redes 2','7','001','0001'),
+	('0020','sistemas operativos','4','001','0001');
 
 --Tabla estudiante
 insert into estudiante(cod_estudiante,cedula,nombre,apellido,fecha_nac,direccion,discapacidad,sexo,etnia) values
@@ -102,52 +106,39 @@ insert into estudiante(cod_estudiante,cedula,nombre,apellido,fecha_nac,direccion
 	('7029','0850106118','JHOEL ESTIVEN','CAIZA PPPP','2003-07-06','el oro','no','M','001'),
 	('7028','0850116128','JUAN ALEJANDRO','YAUCEN HHHH','2000-08-06','cuencia','si','M','002'),
 	('7027','0850106138','FRANCIS PATRICIO','SEPULVEDA AAAA','2001-09-06','morona santiago','no','M','004');
-	select * from matricula
+
 --Tabla matricula
 insert into matricula(cod_estudiante,cod_materia,cod_periodo,fecha_matricula,estado) values
-	('7046','0010','1920','2022-09-19','002'),
-	('7045','0011','1920','2022-09-19','002'),
-	('7044','0012','2021','2022-09-19','002'),
-	('7043','0013','2122','2022-09-19','002'),
-	('7042','0014','2122','2022-09-19','002'),
-	('7041','0015','2021','2022-09-19','002'),
-	('7040','0016','2122','2022-09-19','002'),
-	('7039','0017','2021','2022-09-19','002'),
-	('7038','0018','2122','2022-09-19','002'),
-	('7037','0019','2021','2022-09-19','002'),
-	('7036','0001','2122','2022-09-19','002'),
-	('7035','0002','2021','2022-09-19','002'),
-	('7034','0003','2122','2022-09-19','002'),
-	('7033','0004','2122','2022-09-19','002'),
-	('7032','0005','2021','2022-09-19','002'),
-	('7031','0006','2122','2022-09-19','002'),
-	('7030','0007','1920','2022-09-19','002'),
-	('7029','0008','2122','2022-09-19','002'),
-	('7028','0009','1920','2022-09-19','002'),
-	('7027','0001','2122','2022-09-19','002');
-	
-	select * from evaluacion
+	('7046','0001','1920','2022-09-19','002'),
+	('7045','0001','2021','2022-09-19','002'),
+	('7044','0002','1920','2022-09-19','002'),
+	('7043','0002','2021','2022-09-19','002'),
+	('7042','0001','1920','2022-09-19','002'),
+	('7041','0001','2021','2022-09-19','002'),
+	('7040','0002','1920','2022-09-19','002'),
+	('7039','0002','2021','2022-09-19','002'),
+	('7038','0003','1920','2022-09-19','002'),
+	('7037','0010','2021','2022-09-19','002'),
+	('7036','0011','2122','2022-09-19','002'),
+	('7035','0012','2122','2022-09-19','002'),
+	('7034','0013','2021','2022-09-19','002'),
+	('7033','0014','1920','2022-09-19','002'),
+	('7032','0015','2021','2022-09-19','002'),
+	('7031','0016','1920','2022-09-19','002'),
+	('7030','0017','2122','2022-09-19','002'),
+	('7029','0018','2021','2022-09-19','002'),
+	('7028','0019','1920','2022-09-19','002'),
+	('7027','0020','2122','2022-09-19','002');
+
+insert into matricula(cod_estudiante,cod_materia,cod_periodo,fecha_matricula,estado) values
+	('7027','0006','2122','2022-09-19','002');	
+
 --Tabla evaluacion					
-insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7046','0010','1920',20,18,38,'001');
-insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7045','0011','1920',20,17,37,'001');
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7044','0012','2021',20,20,40,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7043','0013','2122',19,18,37,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7042','0014','2122',18,17,35,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7041','0015','2021',17,20,37,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7040','0016','2122',20,19,39,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7039','0017','2021',20,15,35,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7038','0018','2122',19,17,36,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7037','0019','2021',18,20,38,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7036','0001','2122',17,15,33,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7035','0002','2021',20,17,37,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7034','0003','2122',15,5,20,'002')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7033','0004','2122',20,0,20,'002')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7032','0005','2021',20,1,21,'002')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7031','0006','2122',19,19,38,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7030','0007','1920',18,18,36,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7029','0008','2122',18,17,35,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7028','0009','1920',17,16,33,'001')
-	insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values('7027','0001','2122',20,15,35,'001')
+insert into evaluacion(cod_estudiante,cod_materia,cod_periodo,nota1,nota2,notaFinal,estado) values
+	('001','Facultad de informatica y electronica'),
+	('002','Facultad de administracion de empresaqs'),
+	('003','Facultad de ciencias pecuarias'),
+	('004','Facultad de mecanica');
 
 --Eliminar filas
 
