@@ -26,11 +26,10 @@ GROUP BY m.cod_materia, m.nombre
 HAVING AVG(e.notaFinal) < 15
 
 --4. Conocer las materias de la carrera de software con el mayor número de estudiantes con mayor igual a segundas matriculas.
-
 --estudiantes con 2 y mas matriculas
-SELECT cod_estudiante, cod_materia
+SELECT cod_materia, cod_estudiante
 FROM matricula
-GROUP by cod_estudiante, cod_materia
+GROUP by cod_materia, cod_estudiante
 HAVING count(cod_estudiante) >= 2
 
 --cantidad de estudiantes por materia de software
@@ -41,8 +40,9 @@ JOIN matricula mt on mt.cod_materia = m.cod_materia
 WHERE c.cod_carrera = '0001'
 GROUP BY m.nombre
 
-SELECT cod_estudiante, cod_materia, count(cod_estudiante)
+SELECT TOP 1 m.nombre
 FROM matricula mt
+JOIN materia m on m.cod_materia = mt.cod_materia
 WHERE EXISTS (
 	SELECT m.nombre, count(cod_estudiante)
 	FROM materia m
@@ -51,7 +51,7 @@ WHERE EXISTS (
 	WHERE c.cod_carrera = '0001'
 	GROUP BY m.nombre
 )
-GROUP by cod_estudiante, cod_materia
+GROUP by m.nombre, cod_estudiante
 HAVING count(cod_estudiante) >= 2
 
 --5. Conocer las materias cuya nota promedio (nota1) sea inferior al promedio general de la carrera de software
@@ -63,7 +63,6 @@ WHERE nota1 <
 		SELECT AVG(notaFinal) 
 		FROM evaluacion e
 		JOIN materia m on e.cod_materia = m.cod_materia
-		JOIN carrera c on c.cod_carrera = m.cod_carrera
 		WHERE m.cod_carrera = '0001'
 	)
 
@@ -83,3 +82,12 @@ FROM matricula mt
 JOIN materia m on m.cod_materia = mt.cod_materia
 WHERE m.cod_carrera = '0001' and mt.cod_periodo = '2122'
 GROUP BY mt.cod_materia
+
+SELECT DISTINCT COUNT(cod_materia)
+FROM matricula
+GROUP BY cod_materia
+
+select DISTINCT cod_materia, COUNT(cod_estudiante)
+from matricula
+GROUP BY cod_materia
+
