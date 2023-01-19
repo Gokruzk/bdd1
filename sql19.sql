@@ -1,5 +1,3 @@
-USE BD2_NJ
-
 -- FUNCION PARA OBTENER NOMBRE DE UN ALUMNO SEGUN SU CODIGO
 
 CREATE FUNCTION getNombresEstudiante(@codigo char(4))
@@ -18,34 +16,24 @@ BEGIN
 	RETURN @nomb + ' ' + @apellido 
 END
 
-SELECT dbo.getNombreEstudiante('7046') as NOMBRES
+SELECT dbo.getNombresEstudiante('7046') as NOMBRES
 
--- FUNCION PARA OBTENER MATERIAS DE ESTUDIANTE
+-- FUNCION PARA OBTENER NOTA FINAL DE ESTUDIANTE
 
-ALTER FUNCTION getMateria
+CREATE FUNCTION getNotaFinal
 (
 	@codigo varchar(10)
 )
-	RETURNS table
+RETURNS varchar(80)
 	AS
 BEGIN
 	RETURN 
 		(
-			SELECT nombre
-			FROM matricula mt
-			JOIN materia m on mt.cod_materia = m.cod_materia
+			SELECT notaFinal
+			FROM evaluacion
 			WHERE cod_estudiante = @codigo
 		)
 END
 
-SELECT * FROM dbo.getMateria('7046')
-
-
-
-		SELECT nombre
-		FROM matricula mt
-		JOIN materia m on mt.cod_materia = m.cod_materia
-		WHERE cod_estudiante = @codigo
-
-
+SELECT dbo.getNombresEstudiante('7046') as NOMBRES, dbo.getNotaFinal('7046')
 
